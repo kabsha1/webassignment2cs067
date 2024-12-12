@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOOD DONATION FORM</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -156,5 +157,42 @@
             </tr>
         </form>
     </table>
+    <script>
+    $(document).ready(function () {
+      // Smooth scroll to the form on page load
+      $('html, body').animate({
+        scrollTop: $('.form-container').offset().top
+      }, 1000);
+
+      // Real-time budget validation
+      $('#budget').on('input', function () {
+        const budget = $(this).val();
+        if (budget < 50) {
+          $('#budgetFeedback').text('The budget seems too low for most projects.');
+        } else if (budget > 500000) {
+          $('#budgetFeedback').text('Consider breaking the project into smaller milestones.');
+        } else {
+          $('#budgetFeedback').text('');
+        }
+      });
+
+      // Name validation on blur
+      $('#client_name').on('blur', function () {
+        if (!$(this).val()) {
+          $('#nameError').text('Name is required.');
+        } else {
+          $('#nameError').text('');
+        }
+      });
+
+      // Form submission validation
+      $('#requestForm').on('submit', function (event) {
+        if (!$('#client_name').val()) {
+          event.preventDefault();
+          $('#nameError').text('Please fill out your name.');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
