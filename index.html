@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOOD DONATION FORM</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        td {
+            padding: 15px;
+        }
+        label {
+            color: #4CAF50;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="date"]:focus, textarea:focus {
+            border-color: #4CAF50;
+            background-color: #fff;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: #ff0000;
+            font-size: 14px;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .form-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .form-row input[type="radio"] {
+            margin-right: 10px;
+        }
+        .form-row label {
+            width: 120px;
+        }
+        .form-row .radio-group {
+            display: flex;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>BLOOD DONATION FORM</h1>
+    <table>
+        <form action="submit_form.php" method="post">
+
+            <tr>
+                <td><label for="Donors_Name">Donors Name:</label></td>
+                <td><input type="text" id="Donors_Name" name="Donors_Name" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td><label for="confirm_password">Confirm Password:</label></td>
+                <td><input type="password" id="confirm_password" name="confirm_password" required></td>
+            </tr>
+            <tr>
+                <td><label for="Address">Address:</label></td>
+                <td><input type="text" id="Address" name="Address" required></td>
+            </tr>
+            <tr>
+                <td><label for="Occupation">Occupation:</label></td>
+                <td><input type="text" id="Occupation" name="Occupation" required></td>
+            </tr>
+            <tr class="form-row">
+                <td><label>Gender:</label></td>
+                <td class="radio-group">
+                    <input type="radio" id="male" name="gender" value="male" required><label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required><label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other" required><label for="other">Other</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="date_of_birth">Date of Birth:</label></td>
+                <td><input type="date" id="date_of_birth" name="date_of_birth" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="blood_group">Blood Group:</label></td>
+                <td class="radio-group">
+                    <input type="radio" id="A+" name="blood_group" value="A+" required><label for="A+">A+</label>
+                    <input type="radio" id="A-" name="blood_group" value="A-"><label for="A-">A-</label>
+                    <input type="radio" id="AB+" name="blood_group" value="AB+"><label for="AB+">AB+</label>
+                    <input type="radio" id="AB-" name="blood_group" value="AB-"><label for="AB-">AB-</label>
+                    <input type="radio" id="O+" name="blood_group" value="O+"><label for="O+">O+</label>
+                    <input type="radio" id="O-" name="blood_group" value="O-"><label for="O-">O-</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="bio">Bio:</label></td>
+                <td><textarea id="bio" name="bio" rows="4"></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>
