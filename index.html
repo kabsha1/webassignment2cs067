@@ -164,17 +164,7 @@
         scrollTop: $('.form-container').offset().top
       }, 1000);
 
-      // Real-time budget validation
-      $('#budget').on('input', function () {
-        const budget = $(this).val();
-        if (budget < 50) {
-          $('#budgetFeedback').text('The budget seems too low for most projects.');
-        } else if (budget > 500000) {
-          $('#budgetFeedback').text('Consider breaking the project into smaller milestones.');
-        } else {
-          $('#budgetFeedback').text('');
-        }
-      });
+     
 
       // Name validation on blur
       $('#client_name').on('blur', function () {
